@@ -1,0 +1,17 @@
+{
+    "project_name": "example_dash_app",
+    "description": "short description",
+    "version": "0.0.1",
+    "author": "Dr. Myfull Name",
+    "email": "reachme@mail.com",
+    "homepage": "https://example.com",
+    "github_user_name": "GithubUserName",
+    "github_repo_name": "{{cookiecutter.project_name}}",
+    "license": [
+        "MIT license",
+        "BSD license",
+        "Apache Software License 2.0",
+        "GNU General Public License v3",
+        "Not open source"
+    ]
+}

@@ -1,0 +1,52 @@
+[project]
+name = "bio-falsehoods"
+authors = [{name = "Andrew J. Bonham", email = "bonham@gmail.com"}]
+readme = "README.md"
+description = "Web app to dispel common biology falsehoods."
+license = {file = "LICENSE"}
+requires-python = ">=3.9"
+classifiers = [
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3 :: Only",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Operating System :: OS Independent",
+]
+dependencies = [
+        "plotly",
+        "dash",
+        "dash-bootstrap-components",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Paradoxdruid/bio-falsehoods"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "pytest",
+    "mypy",
+]
+
+[tool.setuptools]
+packages = ["bio_falsehoods"]
+
+[tool.setuptools.dynamic]
+version = "0.1.0"  # {attr = "bio_falsehoods.app.__version__"}
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.mypy]
+ignore_missing_imports = true
+strict = true
+files = "bio_falsehoods/*.py"
+
+[tool.isort]
+profile = "black"
