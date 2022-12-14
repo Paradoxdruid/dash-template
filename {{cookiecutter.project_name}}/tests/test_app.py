@@ -1,6 +1,4 @@
-"""Pytest tests for bio_falsehoods app"""
-
-import re
+"""Pytest tests for {{cookiecutter.project_name}} app"""
 
 from {{cookiecutter.project_name}}.app import toggle_modal
 

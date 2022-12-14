@@ -1,8 +1,4 @@
-"""Utility functions for bio-falsehoods"""
-
-import json
-from dataclasses import dataclass
-from typing import Dict, List
+"""Utility functions for {{cookiecutter.project_name}}"""
 
 import dash_bootstrap_components as dbc
 from dash import html
@@ -34,7 +30,7 @@ def generate_layout() -> dbc.Container:
                         label="More",
                     ),
                 ],
-                brand=f"{{cookiecutter.project_name}}",
+                brand="{{cookiecutter.project_name}}",
                 brand_href="#",
                 color="primary",
                 dark=True,

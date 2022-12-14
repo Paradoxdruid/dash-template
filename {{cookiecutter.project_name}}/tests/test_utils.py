@@ -1,17 +1,16 @@
-"""Pytest tests for bio_falsehoods utils"""
-
-from typing import Dict
+"""Pytest tests for {{cookiecutter.project_name}} utils"""
 
 import dash_bootstrap_components as dbc
 from dash import html
-from pytest_mock.plugin import MockerFixture
+
+# from pytest_mock.plugin import MockerFixture
 
 from {{cookiecutter.project_name}}.layout import FOOTER, MODAL, PADDING, SIZING
 from {{cookiecutter.project_name}}.utils import generate_layout
 
 
 def test_generate_layout() -> None:
-    
+
     EXPECTED = dbc.Container(
         fluid=True,
         children=dbc.Row(
@@ -37,7 +36,7 @@ def test_generate_layout() -> None:
                                         label="More",
                                     ),
                                 ],
-                                brand="Bio-Falsehoods # 1",
+                                brand="{{cookiecutter.project_name}}",
                                 brand_href="#",
                                 color="primary",
                                 dark=True,
@@ -48,34 +47,19 @@ def test_generate_layout() -> None:
                     ),
                     dbc.Row(
                         dbc.Col(
-                            dbc.Card(
-                                dbc.CardBody(
-                                    children=[
-                                        html.H4(
-                                            "Myth: Title",
-                                            className="card-title",
-                                        ),
-                                        html.P(
-                                            "Reality: Text",
-                                            className="card-text",
-                                        ),
-                                        html.H5("Scientific References:"),
-                                        dbc.ListGroup(
-                                            children=[
-                                                dbc.ListGroupItem(
-                                                    "Link 1",
-                                                    href="https://test1.com",
-                                                ),
-                                                dbc.ListGroupItem(
-                                                    "Link 2",
-                                                    href="https://test2.com",
-                                                ),
-                                            ],
-                                        ),
-                                    ]
-                                )
+                            dbc.Col(
+                                dbc.Card(
+                                    dbc.CardBody(
+                                        children=[
+                                            html.P(
+                                                "{{cookiecutter.description}}",
+                                                className="card-text",
+                                            ),
+                                        ]
+                                    )
+                                ),
                             ),
-                        )
+                        ),
                     ),
                     dbc.Row(
                         dbc.Col(
@@ -101,4 +85,3 @@ def test_generate_layout() -> None:
     actual = generate_layout()
 
     assert repr(actual) == repr(EXPECTED)
-

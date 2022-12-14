@@ -1,10 +1,10 @@
-"""App to dispel common biology falsehoods."""
+"""{{cookiecutter.project_name}}
 
-from typing import Dict, List
+{{cookiecutter.description}}
+"""
 
 import dash
-from dash import Input, Output, State, html
-from dash_bootstrap_components import Container
+from dash import Input, Output, State
 
 from {{cookiecutter.project_name}}.layout import THEME
 from {{cookiecutter.project_name}}.utils import generate_layout
@@ -17,16 +17,14 @@ server = app.server
 
 # ----------------- Page Registry ---------------------------
 
-dash.register_page(
-    "{{cookiecutter.project_name}}",
-    path="/",
-    layout=generate_layout())
+dash.register_page("{{cookiecutter.project_name}}", path="/", layout=generate_layout())
 
 # ----------------- Layout ----------------------------------
 
 app.layout = dash.page_container
 
 # ------------------ Callbacks ------------------------------
+
 
 @app.callback(
     Output("modal", "is_open"),
